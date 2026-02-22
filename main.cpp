@@ -20,20 +20,33 @@ int main() {
     //reading from file
     ifstream fin; 
     fin.open("records.txt");
+    if (fin.good()) {
+        cout << "File read successfully.";
+    }
+    else 
+        cout << "File not found.\n";
     
     //three records in the file (int, string, int)
     while (fin >> tempNumber) {  // reads int tempNumber
         fin >> tempScoops; //reads int tempScoops
         fin >> tempToppings;  //reads string tempFlavor
         //populate array with values from file
-        iceCream.push_back(tempNumber);
-        iceCream.push_back(tempScoops);
-        iceCream.push_back(tempToppings);
+        //iceCream.push_back(tempNumber);
+        //iceCream.back(tempScoops);
+        //iceCream.back(tempToppings);
+    }
+    
+    for (int i = 0; i < SIZE; i++) {
+        fin >> iceCream[i];
+    }
+    
+    for (int i = 0; i < SIZE; i++) {
+        cout << iceCream[i];
     }
     
     //output array
     for (int val : iceCream) cout << val << " "; cout << endl;
-
+    fin.close();
     
     return 0;
 }
