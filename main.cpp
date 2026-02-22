@@ -2,7 +2,7 @@
 
 #include <iostream>
 #include <algorithm>
-#include <numeric> 
+#include <numeric>
 #include <array>
 #include <fstream>
 using namespace std;
@@ -11,7 +11,7 @@ const int SIZE = 30; //size of array
 
 int main() {
     //array of ice cream
-    array<int, SIZE> iceCream;
+    array<int, SIZE> iceCream = {3, 4};
     //temporary variables
     int tempNumber; //catalog number
     int tempScoops; //number of scoops
@@ -21,7 +21,7 @@ int main() {
     ifstream fin; 
     fin.open("records.txt");
     if (fin.good()) {
-        cout << "File read successfully.";
+        cout << "File read successfully." << endl;
     }
     else 
         cout << "File not found.\n";
@@ -36,17 +36,22 @@ int main() {
         //iceCream.back(tempToppings);
     }
     
-    for (int i = 0; i < SIZE; i++) {
-        fin >> iceCream[i];
-    }
+    //for (int i = 0; i < SIZE; i++) {
+        //fin >> iceCream[i];
+    //}
     
-    for (int i = 0; i < SIZE; i++) {
-        cout << iceCream[i];
-    }
+    //for (int i = 0; i < SIZE; i++) {
+        //cout << iceCream[i];
+    //}
     
     //output array
+    //for (int val : iceCream) cout << val << " "; cout << endl;
+    //fin.close();
+    
+    //reverse sort
+    sort(iceCream.rbegin(), iceCream.rend());
+    cout << "Reverse sort: ";
     for (int val : iceCream) cout << val << " "; cout << endl;
-    fin.close();
     
     return 0;
 }
