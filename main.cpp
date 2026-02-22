@@ -10,12 +10,10 @@ using namespace std;
 const int SIZE = 30; //size of array
 
 int main() {
-    //array of ice cream
-    array<int, SIZE> iceCream = {3, 4};
-    //temporary variables
-    int tempNumber; //catalog number
-    int tempScoops; //number of scoops
-    int tempToppings; //number of toppings
+    //array of game scores
+    array<int, SIZE> gameScores;
+    //temporary variable for reading scores
+    int tempNumber;
     
     //reading from file
     ifstream fin; 
@@ -26,42 +24,34 @@ int main() {
     else 
         cout << "File not found.\n";
     
-    //three records in the file (int, string, int)
-    while (fin >> tempNumber) {  // reads int tempNumber
-        fin >> tempScoops; //reads int tempScoops
-        fin >> tempToppings;  //reads string tempFlavor
-        //populate array with values from file
-        //iceCream.push_back(tempNumber);
-        //iceCream.back(tempScoops);
-        //iceCream.back(tempToppings);
+    //numbers in the file (int)
+    while (fin >> tempNumber) {  //reads int tempNumber
+        cout << tempNumber;
     }
     
-    //for (int i = 0; i < SIZE; i++) {
-        //fin >> iceCream[i];
-    //}
-    
-    //for (int i = 0; i < SIZE; i++) {
-        //cout << iceCream[i];
-    //}
+    //populate array with values from file
+    for (int i = 0; i < SIZE; i++) {
+        gameScores[i];
+    }
     
     //output array
-    cout << "Array: ";
-    for (int val : iceCream) cout << val << " "; cout << endl;
+    cout << "Game Scores Array: ";
+    for (int val : gameScores) cout << val << " "; cout << endl;
     
-    //reverse sort
-    sort(iceCream.rbegin(), iceCream.rend());
+    /*//reverse sort
+    sort(gameScores.rbegin(), gameScores.rend());
     cout << "Reverse sort: ";
-    for (int val : iceCream) cout << val << " "; cout << endl;
+    for (int val : gameScores) cout << val << " "; cout << endl;
     
     //Maximum value
     cout << "Maximum value: ";
-    cout << *max_element(iceCream.begin(), iceCream.end()) << endl;
+    cout << *max_element(gameScores.begin(), gameScores.end()) << endl;
     //Minimum value
     cout << "Minimum value: ";
-    cout << *min_element(iceCream.begin(), iceCream.end()) << endl;
+    cout << *min_element(gameScores.begin(), gameScores.end()) << endl;
     //Sum of values
     cout << "Sum of values: ";
-    cout << accumulate(iceCream.begin(), iceCream.end(), 0) << endl;
+    cout << accumulate(gameScores.begin(), gameScores.end(), 0) << endl;*/
     
     fin.close();
     
