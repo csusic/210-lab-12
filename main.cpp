@@ -6,7 +6,10 @@ using namespace std;
 
 int main() {
     //temporary variables
-
+    string tempFlavor; //flavor of ice cream
+    int tempScoops; //number of scoops
+    int tempToppings; //number of toppings
+    
     //reading from file
     ifstream fin; 
     fin.open("records.txt");
