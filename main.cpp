@@ -11,9 +11,7 @@ const int SIZE = 30; //size of array
 
 int main() {
     //array of game scores
-    array<int, SIZE> gameScores;
-    //temporary variable for reading scores
-    int tempNumber;
+    std::array<int, SIZE> gameScores;
     
     //reading from file
     ifstream fin; 
@@ -24,25 +22,24 @@ int main() {
     else 
         cout << "File not found.\n";
     
-    //numbers in the file (int)
-    while (fin >> tempNumber) {  //reads int tempNumber
-        cout << tempNumber;
-    }
-    
     //populate array with values from file
     for (int i = 0; i < SIZE; i++) {
-        gameScores[i];
+        fin >> gameScores[i];
     }
     
     //output array
     cout << "Game Scores Array: ";
-    for (int val : gameScores) cout << val << " "; cout << endl;
+    for (int val : gameScores) cout << val << " "; 
+    cout << endl;
     
-    /*//reverse sort
+    //Ascending sort (sort)
+    sort(gameScores.begin(), gameScores.end());
+    cout << "Sort: ";
+    for (int val : gameScores) cout << val << " "; cout << endl;
+    //Descending sort (reverse sort)
     sort(gameScores.rbegin(), gameScores.rend());
-    cout << "Reverse sort: ";
+    cout << "Reverse Sort: ";
     for (int val : gameScores) cout << val << " "; cout << endl;
-    
     //Maximum value
     cout << "Maximum value: ";
     cout << *max_element(gameScores.begin(), gameScores.end()) << endl;
@@ -51,7 +48,11 @@ int main() {
     cout << *min_element(gameScores.begin(), gameScores.end()) << endl;
     //Sum of values
     cout << "Sum of values: ";
-    cout << accumulate(gameScores.begin(), gameScores.end(), 0) << endl;*/
+    cout << accumulate(gameScores.begin(), gameScores.end(), 0) << endl;
+    //Array of zeros
+    cout << "Array of zeros: ";
+    fill(gameScores.begin(), gameScores.end(), 0);
+    for (int val : gameScores) cout << val << " "; cout << endl;
     
     fin.close();
     
