@@ -13,19 +13,20 @@ int main() {
     //reading from file
     ifstream fin; 
     fin.open("records.txt");
-    if (fin.good()) {
+    /*if (fin.good()) {
         cout << "File read successfully.";
         fin.close();
     }
     else 
-        cout << "File not found.\n";
+        cout << "File not found.\n";*/
     
     //three records in the file (int, string, int)
     while (fin >> tempNumber) {  // reads int tempNumber
-        fin.ignore();  //needed between a fin>> and a getline(fin)
+        fin.ignore();  //needed between an int and string
         getline(fin, tempFlavor);  //reads string tempFlavor
         fin >> tempScoops; //reads int tempScoops
-        
+        cout << tempNumber << ": " << tempFlavor << endl;
+        cout << "Number of scoops: " << tempScoops << endl << endl;
     }
 
     
