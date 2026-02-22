@@ -5,11 +5,13 @@
 using namespace std;
 
 int main() {
+    //temporary variables
+
     //reading from file
     ifstream fin; 
-    fin.open("records.text");
+    fin.open("records.txt");
     if (fin.good()) {
-        cout << "File read successfully."
+        cout << "File read successfully.";
         fin.close();
     }
     else 
