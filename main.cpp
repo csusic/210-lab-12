@@ -6,9 +6,9 @@ using namespace std;
 
 int main() {
     //temporary variables
+    int tempNumber; //catalog number
     string tempFlavor; //flavor of ice cream
     int tempScoops; //number of scoops
-    int tempToppings; //number of toppings
     
     //reading from file
     ifstream fin; 
@@ -20,6 +20,13 @@ int main() {
     else 
         cout << "File not found.\n";
     
+    //three records in the file (int, string, int)
+    while (fin >> tempNumber) {  // reads int tempNumber
+        fin.ignore();  //needed between a fin>> and a getline(fin)
+        getline(fin, tempFlavor);  //reads string tempFlavor
+        fin >> tempScoops; //reads int tempScoops
+        
+    }
 
     
     return 0;
