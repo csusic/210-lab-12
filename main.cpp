@@ -45,13 +45,25 @@ int main() {
     //}
     
     //output array
-    //for (int val : iceCream) cout << val << " "; cout << endl;
-    //fin.close();
+    cout << "Array: ";
+    for (int val : iceCream) cout << val << " "; cout << endl;
     
     //reverse sort
     sort(iceCream.rbegin(), iceCream.rend());
     cout << "Reverse sort: ";
     for (int val : iceCream) cout << val << " "; cout << endl;
+    
+    //Maximum value
+    cout << "Maximum value: ";
+    cout << *max_element(iceCream.begin(), iceCream.end()) << endl;
+    //Minimum value
+    cout << "Minimum value: ";
+    cout << *min_element(iceCream.begin(), iceCream.end()) << endl;
+    //Sum of values
+    cout << "Sum of values: ";
+    cout << accumulate(iceCream.begin(), iceCream.end(), 0) << endl;
+    
+    fin.close();
     
     return 0;
 }
