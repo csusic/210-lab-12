@@ -11,7 +11,7 @@ const int SIZE = 30; //size of array
 
 int main() {
     //array of ice cream
-    array<int, SIZE> iceCream = {2, 3};
+    array<int, SIZE> iceCream;
     //temporary variables
     int tempNumber; //catalog number
     int tempScoops; //number of scoops
@@ -25,9 +25,10 @@ int main() {
     while (fin >> tempNumber) {  // reads int tempNumber
         fin >> tempScoops; //reads int tempScoops
         fin >> tempToppings;  //reads string tempFlavor
-        cout << tempNumber << endl;
-        cout << tempScoops << endl;
-        cout << tempToppings << endl << endl;
+        //populate array with values from file
+        iceCream.push_back(tempNumber);
+        iceCream.push_back(tempScoops);
+        iceCream.push_back(tempToppings);
     }
     
     //output array
